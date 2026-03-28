@@ -1,0 +1,152 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="icuas26_3_world">
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='libgz-sim-physics-system.so'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='libgz-sim-user-commands-system.so'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='libgz-sim-scene-broadcaster-system.so'/>
+    <plugin name='gz::sim::systems::Contact' filename='libgz-sim-contact-system.so'/>
+    <plugin name='gz::sim::systems::Imu' filename='libgz-sim-imu-system.so'/>
+    <plugin name='gz::sim::systems::AirPressure' filename='libgz-sim-air-pressure-system.so'/>
+    <plugin name='gz::sim::systems::Sensors' filename='libgz-sim-sensors-system.so'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.80665</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name="ground_plane">
+      <pose>7.25 7.25 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>18 18</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>18 18</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://icuas26_3</uri>
+    </include>
+    <include>
+      <pose>3.3042047443389895 3.0164105892181396 0.9504941105842593 1.5707963267948966 0.0 -1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0019</uri>
+    </include>
+    <include>
+      <pose>7.280031681060792 6.7047467651367185 1.101120948791504 1.5707963267948966 0.0 0.0</pose>
+      <uri>model://aruco_markers/aruco_marker_0015</uri>
+    </include>
+    <include>
+      <pose>1.5789307355880737 7.205932098388672 1.8464856147766113 1.5707963267948966 0.0 3.141592653589793</pose>
+      <uri>model://aruco_markers/aruco_marker_0012</uri>
+    </include>
+    <include>
+      <pose>11.232184928894043 0.07623559981584549 1.9033888578414917 1.5707963267948966 0.0 -1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0013</uri>
+    </include>
+    <include>
+      <pose>0.5296725807189941 3.8332643508911133 0.9541147351264954 1.5707963267948966 0.0 1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0017</uri>
+    </include>
+    <include>
+      <pose>12.803356689453125 9.99436092376709 1.5924251079559324 1.5707963267948966 0.0 -1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0018</uri>
+    </include>
+    <include>
+      <pose>8.088266807556153 4.088751316070557 2.1333937644958496 1.5707963267948966 0.0 1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0016</uri>
+    </include>
+    <include>
+      <pose>7.9748663902282715 8.995220703125 2.670133113861084 1.5707963267948966 0.0 0.0</pose>
+      <uri>model://aruco_markers/aruco_marker_0020</uri>
+    </include>
+    <include>
+      <pose>14.406678634643555 4.185126304626465 1.713401436805725 1.5707963267948966 0.0 1.5707963267948966</pose>
+      <uri>model://aruco_markers/aruco_marker_0011</uri>
+    </include>
+    <include>
+      <pose>8.950425148010254 10.696406883239746 1.3046667575836184 1.5707963267948966 0.0 0.0</pose>
+      <uri>model://aruco_markers/aruco_marker_0014</uri>
+    </include>
+    <include>
+      <pose>2.0369578420627246 10.270008342205937 0.7220956073790952 1.5707963267948966 0.0 2.258019880151343</pose>
+      <uri>model://aruco_markers/aruco_marker_0010</uri>
+    </include>
+    <include>
+      <pose>11.092804271980144 2.2277905482491134 1.7107628694726675 1.5707963267948966 0.0 0.4908710209265993</pose>
+      <uri>model://aruco_markers/aruco_marker_0027</uri>
+    </include>
+    <include>
+      <pose>4.780031246632437 9.613064703058429 3.1569114038540373 1.5707963267948966 0.0 1.0799192565542985</pose>
+      <uri>model://aruco_markers/aruco_marker_0025</uri>
+    </include>
+    <include>
+      <pose>11.104934107733106 11.428221239612693 2.341733596088834 1.5707963267948968 0.0 2.6507277584534616</pose>
+      <uri>model://aruco_markers/aruco_marker_0028</uri>
+    </include>
+    <include>
+      <pose>4.450665083008288 10.147992734966229 0.7855358888677281 1.5707963267948966 0.0 -3.0434156275847775</pose>
+      <uri>model://aruco_markers/aruco_marker_0003</uri>
+    </include>
+    <include>
+      <pose>4.658683764112178 10.102991846781382 2.2006346218593675 1.5707963267948966 0.0 2.6507244943217483</pose>
+      <uri>model://aruco_markers/aruco_marker_0024</uri>
+    </include>
+    <include>
+      <pose>11.223481012407804 2.67358115696361 0.895764261708703 1.5707963267948966 0.0 2.0616628230474494</pose>
+      <uri>model://aruco_markers/aruco_marker_0002</uri>
+    </include>
+    <include>
+      <pose>3.934883503191662 2.800479779805857 2.8578442506721284 1.5707963267948966 0.0 0.883569998619699</pose>
+      <uri>model://aruco_markers/aruco_marker_0006</uri>
+    </include>
+    <include>
+      <pose>5.111198445977226 12.394168674244076 0.6348794746323461 1.5707963267948968 0.0 2.0616673863257757</pose>
+      <uri>model://aruco_markers/aruco_marker_0001</uri>
+    </include>
+    <include>
+      <pose>4.438960751820465 12.231859521220699 1.57515245039408 1.5707963267948968 0.0 -1.4726255053350379</pose>
+      <uri>model://aruco_markers/aruco_marker_0007</uri>
+    </include>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 20 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+  </world>
+</sdf>
