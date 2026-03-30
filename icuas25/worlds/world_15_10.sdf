@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="world_15_10">
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='libgz-sim-physics-system.so'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='libgz-sim-user-commands-system.so'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='libgz-sim-scene-broadcaster-system.so'/>
+    <plugin name='gz::sim::systems::Contact' filename='libgz-sim-contact-system.so'/>
+    <plugin name='gz::sim::systems::Imu' filename='libgz-sim-imu-system.so'/>
+    <plugin name='gz::sim::systems::AirPressure' filename='libgz-sim-air-pressure-system.so'/>
+    <plugin name='gz::sim::systems::Sensors' filename='libgz-sim-sensors-system.so'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.80665</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name="ground_plane">
+      <pose>0.0 0.0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://world_15_10</uri>
+    </include>
+    <include>
+      <pose>5.624584510721243 6.291692374928021 1.2492520137134944 1.5707963267948966 0.0 2.0616767454329685</pose>
+      <uri>model://aruco_markers/aruco_marker_0002</uri>
+    </include>
+    <include>
+      <pose>7.274670934503533 6.201351663940854 2.518913121482712 1.5707963267948966 0.0 -0.09817011239124185</pose>
+      <uri>model://aruco_markers/aruco_marker_0010</uri>
+    </include>
+    <include>
+      <pose>7.518850174372985 4.03224988492873 3.16312075479508 1.5707963267948966 0.0 -2.4543707714181178</pose>
+      <uri>model://aruco_markers/aruco_marker_0008</uri>
+    </include>
+    <include>
+      <pose>4.166628583524883 1.8714208669158465 1.3707219811046132 1.5707963267948966 0.0 -2.6507168318057213</pose>
+      <uri>model://aruco_markers/aruco_marker_0001</uri>
+    </include>
+    <include>
+      <pose>2.736889228222101 6.031164956779235 2.587654171003038 1.5707963267948966 0.0 -0.49087265144453784</pose>
+      <uri>model://aruco_markers/aruco_marker_0007</uri>
+    </include>
+    <include>
+      <pose>5.617314590456248 8.017121630315936 2.09774507529069 1.5707963267948966 0.0 0.6872272543678494</pose>
+      <uri>model://aruco_markers/aruco_marker_0004</uri>
+    </include>
+    <include>
+      <pose>5.753314765704897 3.997214570224744 2.927840655248695 1.5707963267948966 0.0 -0.8835798168667668</pose>
+      <uri>model://aruco_markers/aruco_marker_0009</uri>
+    </include>
+    <include>
+      <pose>5.656074296985507 4.2963699591200974 1.4602842957089128 1.5707963267948963 0.0 -1.6689733554823896</pose>
+      <uri>model://aruco_markers/aruco_marker_0003</uri>
+    </include>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 20 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+  </world>
+</sdf>
